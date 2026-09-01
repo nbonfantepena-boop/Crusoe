@@ -10,9 +10,52 @@
 
 ```text
 Crusoe/
-├── 01_Econometric_Engines/
-│   └── Johansen_Cointegration/     # Hand-coded multivariate reduced-rank regression engine
-├── 02_Empirical_Micro/
-│   └── IT_Services_GAAP_Panel/    # SEC EDGAR GAAP TWFE & DiD AI exposure cost model
-├── 03_Macro_Time_Series/          # VECM & structural cointegration policy applications
-└── docs/                          # Methodological notes and LaTeX technical write-ups
+│
+├── johansen-engine/
+│   ├── r/                      # Legacy custom R function implementation
+│   ├── python/                 # Object-oriented Python JohansenCointegrationTest engine
+│   └── notebooks/              # Empirical macro cointegration vignette
+│
+├── sec-gaap-panel/
+│   ├── data/                   # SEC EDGAR processed panel dataset (2020–2025)
+│   ├── scripts/                # TWFE OLS, DiD Shift-Share & Counterfactual simulation
+│   └── output/                 # Regression plots and diagnostic exports
+│
+└── README.md                   # Repository documentation
+```
+
+
+### 1. Custom Johansen-Juseilus Cointegration Engine (`/johansen-engine`)
+A ground-up implementation of the Johansen (1988, 1991) multivariate cointegration test designed to evaluate long-run equilibrium relationships without relying on black-box wrapper functions.
+
+* **Mathematical Foundation:** Implements reduced-rank regression, canonical correlation analysis, and generalized eigenvalue decomposition ($|\lambda S_{11} - S_{10}S_{00}^{-1}S_{01}| = 0$).
+* **Features:**
+  * Supports all 5 deterministic trend specifications (Osterwald-Lenum / Johansen models).
+  * Calculates exact Trace ($\lambda_{\text{trace}}$) and Maximum Eigenvalue ($\lambda_{\text{max}}$) statistics.
+  * Cross-language implementations available in both **R** and **Python** (`JohansenCointegrationTest`).
+* **Applications:** Testing long-run macroeconomic equilibrium relationships (Okun's Law, Phillips Curve trade-offs) across diverse macro structures (e.g., US, Colombia, transitional economies).
+
+
+
+### 2. GAAP Operational Efficiency & AI Cost-Shock Panel (`/sec-gaap-panel`)
+An empirical evaluation of scale economies, SG&A overhead intensity, and corporate technology cost-absorption strategies across U.S. IT services firms (2020–2025).
+
+* **Data Pipeline:** Custom Python extractors parsing quarterly SEC EDGAR XBRL filings (`10-K`, `10-Q`).
+* **Econometric Framework:**
+  * **Model 1 (Scale Economies):** Two-Way Fixed Effects (TWFE) OLS with clustered standard errors by firm ($\hat{\beta}_{\text{scale}} = -0.024047$, $p = 0.0022$).
+  * **Model 2 (Build vs. Buy Shift-Share):** Difference-in-Differences specification evaluating post-2022 GenAI adoption and token pricing shocks across cross-sectional digital exposure levels.
+* **Key Finding:** Scale remains the primary driver of SG&A margin efficiency ($R^2 = 0.9438$). High-exposure digital consultancies demonstrate overhead dilution post-2022, supporting the "Build" (indigenous AI tool development) hypothesis over third-party API pass-through.
+
+---
+
+##  Tech Stack & Econometrics Toolkit
+
+* **Languages:** Python (3.10+), R
+* **Data & Estimation:** `pandas`, `numpy`, `scipy.linalg`, `statsmodels`, `linearmodels`
+* **Visualization:** `matplotlib`, `seaborn`
+* **Econometric Methods:** Two-Way Fixed Effects (TWFE), Instrument Variables (IV-2SLS), Difference-in-Differences (DiD), Vector Autoregression (VAR), Vector Error Correction Models (VECM), Reduced-Rank Regression, Bartik Shift-Share Instrument (Bartik IV).
+
+##  License
+This repository is open-sourced under the MIT License. All scripts and frameworks are self-authored for research and quantitative portfolio demonstration purposes.
+
+

@@ -9,6 +9,7 @@
 ## Repository Architecture
 
 ```text
+```text
 Crusoe/
 │
 ├── johansen-engine/
@@ -20,6 +21,11 @@ Crusoe/
 │   ├── data/                   # SEC EDGAR processed panel dataset (2020–2025)
 │   ├── scripts/                # TWFE OLS, DiD Shift-Share & Counterfactual simulation
 │   └── output/                 # Regression plots and diagnostic exports
+│
+├── okun-engine/
+│   ├── r/                      # Custom R function for Okun's Law elasticity
+│   ├── python/                 # Object-oriented Python OkunLawEstimator engine
+│   └── notebooks/              # Comparative empirical macro vignette
 │
 └── README.md                   # Repository documentation
 ```
@@ -45,6 +51,14 @@ An empirical evaluation of scale economies, SG&A overhead intensity, and corpora
   * **Model 1 (Scale Economies):** Two-Way Fixed Effects (TWFE) OLS with clustered standard errors by firm ($\hat{\beta}_{\text{scale}} = -0.024047$, $p = 0.0022$).
   * **Model 2 (Build vs. Buy Shift-Share):** Difference-in-Differences specification evaluating post-2022 GenAI adoption and token pricing shocks across cross-sectional digital exposure levels.
 * **Key Finding:** Scale remains the primary driver of SG&A margin efficiency ($R^2 = 0.9438$). High-exposure digital consultancies demonstrate overhead dilution post-2022, supporting the "Build" (indigenous AI tool development) hypothesis over third-party API pass-through.
+
+### 3. Okun's Law Macroeconomic Engine (`/okun-engine`)
+An empirical macroeconometric module estimating Okun's law elasticity coefficients ($\beta$) across structural macro regimes (US, Colombia, transitional economies).
+
+* **Specifications:**
+  * **Difference Model:** $\Delta U_t = \alpha + \beta (g_t - \bar{g}) + \varepsilon_t$
+  * **HP-Filter Gap Model:** $(U_t - U_t^*) = \alpha + \beta (Y_t - Y_t^*) + \varepsilon_t$
+* **Robustness:** Incorporates Newey-West (HAC) heteroskedasticity and autocorrelation-consistent standard errors to handle cyclical persistence.
 
 ---
 

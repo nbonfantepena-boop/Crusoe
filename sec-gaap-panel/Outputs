@@ -1,1 +1,27 @@
+==================================================================
+   MODEL 1: TWO-WAY FIXED EFFECTS (TWFE) - CLUSTERED SE (BY FIRM)  
+==================================================================
+Number of Observations (N): 251
+R-squared (Within/Overall): 0.9438
+Adjusted R-squared:         0.9350
 
+--- Target Elasticity / Coefficient ---
+Log(Revenue) Coef: -0.024047 | Std Error: 0.007842 | p-value: 0.0022
+==> Statistically Significant: Increases in scale significantly reduce SG&A cost intensity.
+
+==================================================================
+   MODEL 2: DIFF-IN-DIFF / SHIFT-SHARE (AI EXPOSURE POST-2022)   
+==================================================================
+Number of Observations (N): 251
+R-squared:                  0.9441
+
+--- Shift-Share Interaction (Build vs. Buy Assessment) ---
+AI Interaction Coef (beta_2): -0.004063 | Std Error: 0.005432 | p-value: 0.4544
+==> Structural Direction: Negative coefficient indicates high-exposure firms achieve overhead dilution ("BUILD" Strategy / Internal AI Efficiency).
+
+===================================================================
+  MODEL 3: EXOGENOUS HIKE IN TOKEN PRICES
+===================================================================
+--- COUNTERFACTUAL SCENARIO A: "BUY" DEPENDENCY ---
+Token Shock Coef: 0.005083 | p-value: 3.1241e-11
+Rises in token costs seem to be absorbed by overhead cost calculations for the selected companies

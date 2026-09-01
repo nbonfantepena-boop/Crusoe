@@ -53,12 +53,16 @@ An empirical evaluation of scale economies, SG&A overhead intensity, and corpora
 * **Key Finding:** Scale remains the primary driver of SG&A margin efficiency ($R^2 = 0.9438$). High-exposure digital consultancies demonstrate overhead dilution post-2022, supporting the "Build" (indigenous AI tool development) hypothesis over third-party API pass-through.
 
 ### 3. Okun's Law Macroeconomic Engine (`/okun-engine`)
-An empirical macroeconometric module estimating Okun's law elasticity coefficients ($\beta$) across structural macro regimes (US, Colombia, transitional economies).
+An empirical macroeconometric framework quantifying the elasticity trade-off between output growth deviations and unemployment changes across differing structural economies.
 
 * **Specifications:**
   * **Difference Model:** $\Delta U_t = \alpha + \beta (g_t - \bar{g}) + \varepsilon_t$
-  * **HP-Filter Gap Model:** $(U_t - U_t^*) = \alpha + \beta (Y_t - Y_t^*) + \varepsilon_t$
-* **Robustness:** Incorporates Newey-West (HAC) heteroskedasticity and autocorrelation-consistent standard errors to handle cyclical persistence.
+  * **HP-Filter Gap Model:** $(U_t - \hat{U}_t) = \alpha + \beta (Y_t - \hat{Y}_t) + \varepsilon_t$
+* **Methodological Features:**
+  * Dynamic Hodrick-Prescott (HP) filter decomposition ($\lambda = 1600$ for quarterly data).
+  * Heteroskedasticity and Autocorrelation Consistent (HAC / Newey-West) robust standard error adjustments.
+  * Dual implementations in **R** and object-oriented **Python** (`OkunLawEstimator`).
+* **Applications:** Cross-country comparison of labor market flexibility and unemployment-growth responsiveness across emerging, reserve-currency, and transitional economies.
 
 ---
 

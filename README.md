@@ -38,7 +38,7 @@ A ground-up implementation of the Johansen (1988, 1991) multivariate cointegrati
 * **Features:**
   * Supports all 5 deterministic trend specifications (Osterwald-Lenum / Johansen models).
   * Calculates exact Trace ($\lambda_{\text{trace}}$) and Maximum Eigenvalue ($\lambda_{\text{max}}$) statistics.
-  * Cross-language implementations available in both **R** and **Python** (`JohansenCointegrationTest`).
+  * Cross-language implementations available in both **R** and **Python** (`johansen_engine`).
 * **Applications:** Testing long-run macroeconomic equilibrium relationships (Okun's Law, Phillips Curve trade-offs) across diverse macro structures (e.g., US, Colombia, transitional economies).
 
 
@@ -61,7 +61,7 @@ An empirical macroeconometric framework quantifying the elasticity trade-off bet
 * **Methodological Features:**
   * Dynamic Hodrick-Prescott (HP) filter decomposition ($\lambda = 1600$ for quarterly data).
   * Heteroskedasticity and Autocorrelation Consistent (HAC / Newey-West) robust standard error adjustments.
-  * Dual implementations in **R** and object-oriented **Python** (`OkunLawEstimator`).
+  * Dual implementations in **R** and object-oriented **Python** (`okun_law`).
 * **Applications:** Cross-country comparison of labor market flexibility and unemployment-growth responsiveness across emerging, reserve-currency, and transitional economies.
 
 ---

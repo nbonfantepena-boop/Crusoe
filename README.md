@@ -22,7 +22,7 @@ Crusoe/
 │   ├── scripts/                # TWFE OLS, DiD Shift-Share & Counterfactual simulation
 │   └── output/                 # Regression plots and diagnostic exports
 │
-├── okun-engine/
+├── okun-law/
 │   ├── r/                      # Custom R function for Okun's Law elasticity
 │   ├── python/                 # Object-oriented Python OkunLawEstimator engine
 │   └── notebooks/              # Comparative empirical macro vignette
@@ -52,7 +52,7 @@ An empirical evaluation of scale economies, SG&A overhead intensity, and corpora
   * **Model 2 (Build vs. Buy Shift-Share):** Difference-in-Differences specification evaluating post-2022 GenAI adoption and token pricing shocks across cross-sectional digital exposure levels.
 * **Key Finding:** Scale remains the primary driver of SG&A margin efficiency ($R^2 = 0.9438$). High-exposure digital consultancies demonstrate overhead dilution post-2022, supporting the "Build" (indigenous AI tool development) hypothesis over third-party API pass-through.
 
-### 3. Okun's Law Macroeconomic Engine (`/okun-engine`)
+### 3. Okun's Law Macroeconomic Engine (`/okun-law`)
 An empirical macroeconometric framework quantifying the elasticity trade-off between output growth deviations and unemployment changes across differing structural economies.
 
 * **Specifications:**

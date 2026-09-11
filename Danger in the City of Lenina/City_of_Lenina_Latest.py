@@ -1,6 +1,5 @@
 #V4 of the Market Creator -- Corrects Flat Hazard lines by including a subscription cost to the elite market as a problem of optimization in itself
 
-# V4 of the Market Creator - Dynamic Access Subscription & Debt Memory
 
 import numpy as np
 import pandas as pd

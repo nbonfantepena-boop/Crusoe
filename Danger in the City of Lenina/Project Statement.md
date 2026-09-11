@@ -1,6 +1,6 @@
 # Danger in the City of Lenina: A Spatial Agent-Based Model of Credit Rationing, Market Access, and Financial Survival
 
-> *Title inspired by Joanna Stingrey’s homonymous track.*
+> *Title inspired by Joanna Stingrey’s music: "Danger" and "City of Lenin" are songs written and recorded by Joanna Stingrey, she inspired her music on the melodies of "Солнце встаёт" by the Soviet rock group Igry (Игры) and "Невесёлая песня" by the post-punk band Kino (Кино). This project-s title is a portmanteau of both English titles*
 
 ## Model Overview & Intuition
 

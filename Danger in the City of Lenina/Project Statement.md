@@ -22,7 +22,7 @@ Income is generated via factory production, combining a deterministic wage refle
 Agent choice is governed by a convex combination of two distinct utility frameworks, parameterized by the agent's effective cognitive capacity ($\alpha$):
 
 1. **The Rational Optimizer ($U_{\text{true}}$):** Evaluates choices based on true underlying quality relative to price ($Q_{\text{true}} / P$).
-2. **The Fool ($U_{\text{fool}}$):** Inspired by Prince Myshkin in Dostoevsky’s *The Idiot*, "The Fool" models a catastrophic non-optimizer who derives utility from distorted price-quality signals, systematically overpaying for low-quality goods ($P - 0.5 \cdot Q_{\text{perceived}}$).
+2. **The Fool ($U_{\text{fool}}$):** Inspired by Prince Myshkin in Dostoevsky’s *The Idiot*, "The Fool" is the foundational concept that gave way for the development of a bounded rationality model for the City of Lenina, it models a catastrophic non-optimizer who derives utility from distorted price-quality signals, systematically overpaying for low-quality goods ($P - 0.5 \cdot Q_{\text{perceived}}$).
 
 Higher cognitive capacity ($\alpha$) shifts agent preference toward $U_{\text{true}}$. In baseline versions, institutional access to Sverdlova Avenue is granted via a static, one-off capital investment. In advanced iterations, this is extended to a **per-period dynamic subscription regime**, introducing inter-period savings incentives, liquidity thresholds, and endogenous market-switching behavior.
 
